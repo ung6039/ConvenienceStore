@@ -4,38 +4,39 @@ import {fetchboard, fetchTotal} from '../actions/ConvinenceAction'
 import axios from 'axios'
 import {NavLink} from "react-router-dom";
 import {FETCH_BOARD, FETCH_TOTAL} from "../actions/types";
-
+import {gs25_logo} from '../img/gs25_logo.jpg'
 export default function Home(props) {
     const dispatch = useDispatch()
     useEffect(()=>{
            dispatch(fetchTotal())
     },[])
-    const total_data = useSelector(state => state.product.total)
-    console.log(total_data)
-    const html =total_data.map((m)=>
-        <div className="col-md-3">
-            <div className="panel panel-success">
-                <div className="panel-heading">
-                    {m.store} <br/>
-                    {m.title}
-                    <br/>
-                    <sub>가격 : {m.price}</sub>
-
+    return (
+        <div className="text-center">
+            <div className={"jumbotron text-center"}>
+            <h1>편의점 끝판왕</h1>
+            </div>
+            <div className={"row"}>
+                <div className={"col-md-6"} sytle={{"width":"100px"}}>
+                  <NavLink to={"/gs25"}>
+                    <img src={require('../img/gs25_logo.jpg')} width={"300"} height={"300"} />
+                  </NavLink>
                 </div>
-                <div className="panel-body">
-                    <div className="thumbnail">
-                        <NavLink to={"/detail/"+m.no}>
-                            <img src={m.image} alt="Lights" style={{"width":"100%"}}/>
-                        </NavLink>
-                    </div>
+                <div className={"col-md-6"}>
+                    <NavLink to={"/cu"}>
+                        <img src={require('../img/cu_logo.jpg')} width={"300"} height={"300"}/>
+                    </NavLink>
+                </div>
+                <div className={"col-md-6"}>
+                   <NavLink to={"/"}>
+                       <img src={require('../img/minstop_logo.jpg')} width={"300"} height={"300"}/>
+                   </NavLink>
+                </div>
+                <div className={"col-md-6"}>
+                    <NavLink to={"/emart24"}>
+                        <img src={require('../img/emart24_logo.png')} width={"300"} height={"300"}/>
+                    </NavLink>
                 </div>
             </div>
-        </div>
-    )
-    return (
-        <div className="jumbotron text-center">
-            <h1>편의점 끝판왕</h1>
-            {html}
         </div>
     )
 }

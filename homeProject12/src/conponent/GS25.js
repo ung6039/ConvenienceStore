@@ -3,6 +3,7 @@ import Fragment from "react"
 import {fetchgs25} from "../actions/ConvinenceAction"
 import React,{useEffect,useState} from "react";
 import {useDispatch,useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 
 export default function GS25(props) {
 
@@ -15,12 +16,13 @@ export default function GS25(props) {
     const html=gs25_data.map((m)=>
         <div className="col-md-4">
             <div className="thumbnail">
+                <NavLink to={"/detail"}>
                 <img src={m.image} alt="Lights" style={{"width":"100%"}}/>
+                </NavLink>
                 <div className="caption">
                     <p>{m.title}</p>
                     <p>{m.price}</p>
                 </div>
-
             </div>
         </div>
     )
