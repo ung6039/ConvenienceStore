@@ -143,6 +143,19 @@ app.get('/detail',(req,res)=>{
         })
     })
 })
+app.get('/board',(req,res)=>{
+    var url="mongodb://localhost:27017";
+    // 연결
+    Client.connect(url,(err,client)=>{
+        // Database (mydb)
+        var db=client.db("mydb")
+        // Table => Collection => recipe
+        db.collection('storeboard').find({}).toArray((err,docs)=>{
+            res.json(docs)
+            client.close()
+        })
+    })
+})
 
 app.get('/store',(req,res)=>{
     // var page=req.query.page;// request.getParameter("page")

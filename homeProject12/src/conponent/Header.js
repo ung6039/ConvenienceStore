@@ -13,7 +13,7 @@ function Header() {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <NavLink className="navbar-brand" to={"/"}>편의점 끝판왕</NavLink>
+                        <NavLink className="navbar-brand" to={"/"}>와라! 편의점</NavLink>
                     </div>
                     <div className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-right">

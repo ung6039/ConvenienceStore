@@ -21,7 +21,7 @@ export default function Home(props) {
         <div className="text-center">
             <div className={"jumbotron-main text-center"} style={{sectionStyle}} >
                 <div style={{"background-color":"gray"}} width={"50"}>
-                <h1 style={{"color":"white"}}>편의점 끝판왕</h1>
+                <h1 style={{"color":"white"}}>와라! 편의점</h1>
                 </div>
             </div>
             <div className={"row"}>

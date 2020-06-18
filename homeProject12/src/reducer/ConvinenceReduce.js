@@ -5,7 +5,7 @@ import {
     FETCH_NEWS,
     FETCH_TOTAL,
     FETCH_DETAIL,
-    FETCH_MINISTOP, FETCH_SEVEN
+    FETCH_MINISTOP, FETCH_SEVEN, FETCH_BOARD
 } from "../actions/types";
 
 const initialState={
@@ -60,6 +60,11 @@ export default function (state=initialState,action) {
             return{
                 ...state,
                 seven: action.payload
+            }
+        case FETCH_BOARD:
+            return{
+                ...state,
+                board:action.payload
             }
         default:
             return state

@@ -17,7 +17,9 @@ import DetailProduct from "./conponent/DetailProduct";
 
 function App() {
   return (
+
       <Provider store={store}>
+
       <Router>
         <Header/>
         <Switch>
@@ -30,7 +32,7 @@ function App() {
           <Route path={"/news"} component={News}/>
           <Route path={"/ministop"} component={MINISTOP}/>
           <Route path={"/seven"} component={SEVEN}/>
-          {/*<Route path={"/board"} component={Board}/>*/}
+          <Route path={"/board"} component={Board}/>
         </Switch>
       </Router>
       </Provider>
