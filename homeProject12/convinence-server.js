@@ -66,6 +66,40 @@ app.get('/cu',(req,res)=>{
     })
 })
 
+app.get('/ministop',(req,res)=>{
+    // var page=req.query.page;// request.getParameter("page")
+    // var rowSize=9;
+    // var skip=(page*rowSize)-rowSize;
+    var url="mongodb://localhost:27017";
+    // 연결
+    Client.connect(url,(err,client)=>{
+        // Database (mydb)
+        var db=client.db("mydb")
+        // Table => Collection => recipe
+        db.collection('store').find({store:"미니스톱"}).toArray((err,docs)=>{
+            res.json(docs)
+            client.close()
+        })
+    })
+})
+
+app.get('/seven',(req,res)=>{
+    // var page=req.query.page;// request.getParameter("page")
+    // var rowSize=9;
+    // var skip=(page*rowSize)-rowSize;
+    var url="mongodb://localhost:27017";
+    // 연결
+    Client.connect(url,(err,client)=>{
+        // Database (mydb)
+        var db=client.db("mydb")
+        // Table => Collection => recipe
+        db.collection('store').find({store:"세븐일레븐"}).toArray((err,docs)=>{
+            res.json(docs)
+            client.close()
+        })
+    })
+})
+
 app.get('/total',(req,res)=>{
     var url="mongodb://localhost:27017";
     // 연결

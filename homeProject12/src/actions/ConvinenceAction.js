@@ -5,7 +5,7 @@ export const FETCH_GS25 ='FETCH_GS25'
 export const FETCH_CU = 'FETCH_CU'
 export const FETCH_EMART24
  */
-import {FETCH_GS25, FETCH_NEWS, FETCH_BOARD, FETCH_TOTAL, FETCH_DETAIL} from "./types";
+import {FETCH_GS25, FETCH_NEWS, FETCH_BOARD, FETCH_TOTAL, FETCH_DETAIL,FETCH_MINISTOP,FETCH_SEVEN} from "./types";
 import {FETCH_CU} from "./types";
 import {FETCH_EMART24} from "./types";
 import axios from 'axios'
@@ -44,6 +44,30 @@ export function fetchemart24() {
         }))
     }
 }
+export function fetchministop(){
+    return function(dispatch){
+        console.log("action"+dispatch)
+        axios.get("http://localhost:3355/ministop",{
+
+        }).then(ministop=>dispatch({
+            type:FETCH_MINISTOP,
+            payload:ministop.data
+        }))
+    }
+}
+
+export function fetchseven(){
+    return function(dispatch){
+        console.log("action"+dispatch)
+        axios.get("http://localhost:3355/seven",{
+
+        }).then(seven=>dispatch({
+            type:FETCH_SEVEN,
+            payload:seven.data
+        }))
+    }
+}
+
 export function fetchenews(fd) {
     return function(dispatch){
         console.log("action "+dispatch)
@@ -79,6 +103,7 @@ export function fetchTotal(){
         }))
     }
 }
+
 
 // export function fetchdetail(props){
 //     return function(dispatch){

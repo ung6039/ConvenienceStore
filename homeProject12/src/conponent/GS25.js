@@ -16,19 +16,21 @@ export default function GS25(props) {
     const html=gs25_data.map((m)=>
         <div className="col-md-4">
             <div className="thumbnail">
-                <NavLink to={"/detail"}>
+                <NavLink to={"/detail/"+m.no}>
                 <img src={m.image} alt="Lights" style={{"width":"100%"}}/>
                 </NavLink>
                 <div className="caption">
-                    <p>{m.title}</p>
-                    <p>{m.price}</p>
+                     <p>{m.title}</p>
+                     <p>{m.price}</p>
                 </div>
             </div>
         </div>
     )
     return (
-        <div className={"jumbotron text-center"} style={{"margin":"0px auto","width":"900px"}}>
-                <h1 className={"text-center"}>GS25</h1>
+        <div className={"jumbotron-main text-center"} style={{"margin":"0px auto","width":"900px"}}>
+            <div style={{"background-color":"gray"}}>
+                <h1 className={"text-center"} style={{"color":"orange"}}>GS25</h1>
+            </div>
             {html}
         </div>
 

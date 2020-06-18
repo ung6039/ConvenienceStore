@@ -22,8 +22,10 @@ export default function Emart24(props) {
         </div>
     )
     return (
-        <div className={"jumbotron text-center"} style={{"margin": "0px auto", "width": "900px"}}>
-            <h1 className={"text-center"}>Emart</h1>
+        <div className={"jumbotron-main text-center"} style={{"margin": "0px auto", "width": "900px"}} >
+            <div style={{"background-color":"gray"}}>
+            <h1 className={"text-center"} style={{"color":"yellow"}}>Emart</h1>
+            </div>
             {html}
         </div>
 

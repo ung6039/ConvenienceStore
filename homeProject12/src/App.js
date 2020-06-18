@@ -7,6 +7,8 @@ import GS25 from "./conponent/GS25";
 import CU from "./conponent/CU"
 import Emart24 from "./conponent/Emart24"
 import News from "./conponent/News"
+import MINISTOP from './conponent/MINISTOP'
+import SEVEN from './conponent/SEVEN'
 import Board from "./conponent/Board"
 import {Provider} from "react-redux";
 import store from './store/Store'
@@ -26,6 +28,8 @@ function App() {
           <Route path={"/emart24"} component={Emart24}/>
           <Route path={"/detail/:no"} component={DetailProduct}/>
           <Route path={"/news"} component={News}/>
+          <Route path={"/ministop"} component={MINISTOP}/>
+          <Route path={"/seven"} component={SEVEN}/>
           {/*<Route path={"/board"} component={Board}/>*/}
         </Switch>
       </Router>

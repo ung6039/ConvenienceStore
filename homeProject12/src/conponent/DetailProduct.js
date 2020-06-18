@@ -27,7 +27,7 @@ export default function DetailProduct(props){
 
     return(
         <Fragment>
-        <div class={"jumbotron text-center"}>
+        <div class={"jumbotron-main text-center"}>
             <h1>{detail_data.store}</h1>
         </div>
             <table className={"table"}>
@@ -37,7 +37,7 @@ export default function DetailProduct(props){
                 </tr>
                 <tr>
                     <td width={"30%"} rowSpan={"5"} className={"text-center"}>
-                        <img src={detail_data.image} width={"100%"}/>
+                        <img src={detail_data.image} width={"500"} height={"400"}/>
                     </td>
                     <td style={{"color":"orange"}} width={"70%"}><strong>{detail_data.title}</strong></td>
                 </tr>
