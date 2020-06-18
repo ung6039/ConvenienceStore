@@ -53,6 +53,9 @@ export default function DetailProduct(props){
                 <tr>
                     <td><strong>{detail_data.cate}</strong></td>
                 </tr>
+                <tr>
+                    <td><button> 목록 </button></td>
+                </tr>
                 </tbody>
             </table>
 

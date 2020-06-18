@@ -8,17 +8,17 @@ export default function Board(props){
         dispatch(fetchboard())
     },[])
 
-    const board_data = useState(state => state.product.board)
-    const html = board_data.mpa((m) =>
+    const board_data = useSelector(state => state.product.board)
+    const html = board_data.map((m) =>
         <table className={"table"}>
            <tbody>
-           <tr>
+           <tr className={"table-color"}>
                <th>번호</th>
-               <th colSpan={"4"}>제목</th>
-               <th>제목</th>
-               <th>날짜</th>
+               <th colSpan={"4"} className={"text-center"}>제목</th>
+               <th className={"text-center"}>글쓴이</th>
+               <th className={"text-center"}>날짜</th>
            </tr>
-           <tr>
+           <tr className={"table-color"}s>
                <td>{m.no}</td>
                <td colSpan={"4"}>{m.title}</td>
                <td>{m.author}</td>
