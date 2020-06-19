@@ -47,7 +47,7 @@ export default function Home(props) {
                 </div>
                 <div className={"col-md-6"}>
                     <NavLink to={"/seven"}>
-                        <img src={require('../img/seven_logo.png')} width={"300"} height={"300"}/>
+                        <img src={require('../img/seven1.png')} width={"300"} height={"300"}/>
                     </NavLink>
                 </div>
             </div>

@@ -80,11 +80,13 @@ export function fetchenews(fd) {
     }
 }
 
-export function fetchboard() {
+export function fetchboard(page) {
     return function(dispatch){
         console.log("action "+dispatch)
-        axios.get("http://localhost:3355/board",{
-
+        axios.get("http://localhost:3355/board", {
+            params:{
+                page:page
+            }
         }).then(board=>dispatch({
             type:FETCH_BOARD,
             payload:board.data

@@ -144,13 +144,16 @@ app.get('/detail',(req,res)=>{
     })
 })
 app.get('/board',(req,res)=>{
+    var page = req.query.page;
+    var rowSize=7;
+    var skip=(page*rowSize)-rowSize;
     var url="mongodb://localhost:27017";
     // 연결
     Client.connect(url,(err,client)=>{
         // Database (mydb)
         var db=client.db("mydb")
         // Table => Collection => recipe
-        db.collection('storeboard').find({}).toArray((err,docs)=>{
+        db.collection('storeboard').find({}).skip(skip).limit(rowSize).toArray((err,docs)=>{
             res.json(docs)
             client.close()
         })
